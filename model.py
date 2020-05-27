@@ -7,6 +7,12 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
+# A bunch of stuff to make the connection to the database work.
+def dbconnect():
+    engine = create_engine('sqlite:///zoo.db', echo=False)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    return Session()
 
 # Genus is currently the "parent" of everything. It is the "root".
 class Genus(Base):
