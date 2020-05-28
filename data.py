@@ -1,5 +1,5 @@
 ## Define a list of dicts of our species.
-    species_list = [
+species_list = [
         {"common_name": "Domestic Cat", "scientific_name": "Felis catus", "genus": "Felis"},
         {"common_name": "Black Footed cat", "scientific_name": "Felis nigripes", "genus": "Felis"},
         {"common_name": "Jungle cat", "scientific_name": "Felis chaus", "genus": "Felis"},
@@ -11,8 +11,8 @@
         {"common_name": "Wolf", "scientific_name": "Canis lupus", "genus": "Canis"}
     ]
 
-    ## Define a list of dicts of our specimens.
-    specimen_list = [
+## Define a list of dicts of our specimens.
+specimen_list = [
         {"name": "bongo", "scientific_species": "Felis nigripes", "birth_date_time": "1262304000", "enclosure": "African Savannah", "continent": "Africa"},
         {"name": "coco", "scientific_species": "Cervus canadensis", "birth_date_time": "1293840000", "enclosure": "Alaskan Tundra", "continent": "North America"},
         {"name": "lola", "scientific_species": "Tursiops truncatus", "birth_date_time": "1325376000", "enclosure": "Under the Sea", "continent": "Asia"},
