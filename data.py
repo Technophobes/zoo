@@ -1,25 +1,8 @@
-from sqlalchemy import Integer, Column, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relation
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from flask import Flask
-from flask import jsonify
-from flask import request
-from model import Species, Specimen, Genus, dbconnect
-app = Flask(__name__)
+
 
 from import_functions import addSpecimen, addSpecies
-from model import Species, Specimen, Genus, dbconnect
-
-Base = declarative_base()
-
-# A bunch of stuff to make the connection to the database work.
-engine = create_engine('sqlite:///zoo.db', echo=False)
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
-session = Session()
-
+# from model import Species, Specimen, Genus, dbconnect
+from model import dbconnect
 
 
 # Define a list of dicts of our species.
@@ -34,6 +17,8 @@ species_list = [
     {"common_name": "Sea otter", "scientific_name": "Enhydra lutris", "genus": {"scientific_name": "Enhydra"}},
     {"common_name": "Wolf", "scientific_name": "Canis lupus", "genus": {"scientific_name": "Canis"}}
 ] 
+
+session = dbconnect()
 
 for species in species_list:
     addSpecies(session, species)

@@ -1,17 +1,10 @@
-from sqlalchemy import Integer, Column, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relation
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+
 from flask import Flask
 from flask import jsonify
 from flask import request
 from model import dbconnect, Species, Specimen, Genus
 
 app = Flask(__name__)
-
-Base = declarative_base()
-
 
 @app.route('/cool')
 def cool():
