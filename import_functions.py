@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from flask import Flask
 from flask import jsonify
 from flask import request
+from model import Species, Specimen, Genus, dbconnect
 app = Flask(__name__)
 
 Base = declarative_base()
@@ -43,10 +44,5 @@ def addSpecies(session, species_input):
     session.commit()
 
 
-# A bunch of stuff to make the connection to the database work.
-engine = create_engine('sqlite:///zoo.db', echo=False)
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
-session = Session()
 
 
