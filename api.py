@@ -20,6 +20,7 @@ def cool():
         row_list.append(row_dict)
     return jsonify(row_list)
 
+<<<<<<< HEAD
 @app.route('/species/<search_term>', methods=['GET'])
 def get_species(search_term):
     session = dbconnect()
@@ -30,6 +31,21 @@ def get_species(search_term):
         row_dict.pop("_sa_instance_state")
         return_list.append(row_dict)
     return jsonify(return_list)
+=======
+@app.route('/add_specimen', methods=['POST'])
+def add_specimen(): 
+    session = dbconnect()
+    request_dict = request.get_json()
+    specimen = Specimen()
+    species = session.query(Species).filter(Species.scientific_name == request_dict["species"]["scientific_name"]).one() #fix the database table so that there is only one 
+    specimen.name = request_dict["name"]
+    specimen.birth_date_time = request_dict["birth_date_time"]
+    specimen.species_id = species.id    
+    session.add(specimen)
+    session.commit()
+    return "ok"
+
+>>>>>>> master
 
 
 # to get the error message on the url
