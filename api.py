@@ -32,6 +32,16 @@ def add_specimen():
     session.commit()
     return "ok"
 
+@app.route('/species/<search_term>', methods=['GET'])
+def get_species(search_term):
+    session = dbconnect()
+    return_list = []
+    print(search_term)
+    for row in session.query(Species).filter(Species.scientific_name == search_term).all():
+        row_dict = row.__dict__
+        row_dict.pop("_sa_instance_state")
+        return_list.append(row_dict)
+    return jsonify(return_list)
 
 
 # to get the error message on the url
