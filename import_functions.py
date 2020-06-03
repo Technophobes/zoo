@@ -43,6 +43,30 @@ def addSpecies(session, species_input):
     session.add(species)
     session.commit()
 
+# I want to create functions that add Genus, Species and Specimen. Then these fundctions will be called in the endpoints
 
+def addGenus(session, genus_input):
+    print("creating new Genus:" + genus_input)
+    genus = Genus()
+    try: 
+        genus = session.query(Genus).filter(Genus.scientific_name == genus_input["scientific_name"]).one()
+        print(genus)
+        return genus
+    except:
+        genus.scientific_name = genus_input["scientific_name"]
+        result = session.add(genus)
+        print(result)
+        return result
+
+
+def addSpecies2(session, species_input):
+    genus_id = addGenus(session, species_input["genus"])
+    print("creating new Species:" + species_input)
+    species = Species()
+    species.scientific_name = species_input["scientific_name"]
+    species.common_name = species_input["common_name"]
+    species.genus = genus_id
+    session.add(species)
+    session.commit()
 
 
