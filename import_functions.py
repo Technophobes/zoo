@@ -30,6 +30,7 @@ def addSpecimen(session, specimen_input):
 
 def addSpecies(session, species_input):
     genus = Genus()
+#    session = dbconnect()
     try: 
         genus = session.query(Genus).filter(Genus.scientific_name == species_input["genus"]["scientific_name"]).one()
     except:
@@ -58,15 +59,5 @@ def addGenus(session, genus_input):
         print(result)
         return result
 
-
-def addSpecies2(session, species_input):
-    genus_id = addGenus(session, species_input["genus"])
-    print("creating new Species:" + species_input)
-    species = Species()
-    species.scientific_name = species_input["scientific_name"]
-    species.common_name = species_input["common_name"]
-    species.genus = genus_id
-    session.add(species)
-    session.commit()
 
 

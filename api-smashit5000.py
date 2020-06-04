@@ -1,6 +1,7 @@
+
 import requests
 import json
-
+from model import dbconnect, Species, Specimen, Genus
 # r =requests.get("http://127.0.0.1:5000/genus_and_species_and_specimen/6")
 
 # # print(r.text)
@@ -29,9 +30,19 @@ species_list = [
     {"common_name": "Wolf", "scientific_name": "Canis lupus", "genus": {"scientific_name": "Canis"}}
 ] 
 
+#session = dbconnect()
+
 for species in species_list:
-    pload = json.dumps(species)
-    s = requests.post("http://127.0.0.1:5000/add_species" , json = pload)
+    session = dbconnect()
+    genus = Genus()
+    try: 
+        genus = session.query(Genus).filter(Genus.scientific_name == species["genus"]["scientific_name"]).one()
+    except:
+        pload_genus = json.dumps(species["genus"])
+        g = requests.post("http://127.0.0.1:5000/add_genus" , json = pload_genus)
+
+    pload_species = json.dumps(species)
+    s = requests.post("http://127.0.0.1:5000/add_species" , json = pload_species)
     print(species["common_name"])
 
 
