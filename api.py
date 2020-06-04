@@ -70,6 +70,29 @@ def add_specimen():
     session.commit()
     return "ok"
 
+
+@app.route('/genus_and_species_and_specimen/<search_term>', methods=['GET'])
+def get_genus_and_species_and_specimen(search_term):
+    if request.method == 'GET':
+        return_list = []
+        session = dbconnect()
+
+        
+        for genus_instance, species_instance, specimen_instance in session.query(Genus, Species, Specimen).filter(
+            Genus.id == search_term, Genus.id == Species.genus_id, Species.id == Specimen.species_id).all():
+            
+            row = {}
+            row["genus_id"] = genus_instance.id
+            row["genus_scientific_name"] = genus_instance.scientific_name
+            row["species_id"] = species_instance.id
+            row["species_scientific_name"] = species_instance.scientific_name
+            row["specimen_id"] = specimen_instance.id
+            row["specimen_name"] = specimen_instance.name
+            return_list.append(row)
+        return jsonify(return_list)
+    else:
+        return "Unsupported Method"
+
 @app.route('/species/<search_term>', methods=['GET'])
 def get_species(search_term):
     session = dbconnect()
