@@ -2,12 +2,12 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask_cors import CORS
 from model import dbconnect, Species, Specimen, Genus
 from sqlalchemy import exc
 
 app = Flask(__name__)
-
-
+CORS(app)
 
 @app.route('/genus', methods=['POST'])
 def add_genus():
