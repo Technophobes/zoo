@@ -18,8 +18,8 @@ species_list = [
 
 session = dbconnect()
 
-for species in species_list:
-    addSpecies(session, species)
+# for species in species_list:
+#     addSpecies(session, species)
 
 
 # Define a list of dicts of our specimens.
@@ -31,5 +31,5 @@ specimen_list = [
     {"name": "stella", "species": {"scientific_name": "Enhydra lutris"}, "birth_date_time": "1420070400"}
 ]
 
-for specimen in specimen_list:
-    addSpecimen(session, specimen)
+# for specimen in specimen_list:
+#     addSpecimen(session, specimen)
