@@ -93,6 +93,8 @@ def get_genus_and_species_and_specimen(search_term):
     else:
         return "Unsupported Method"
 
+
+
 @app.route('/species/<search_term>', methods=['GET'])
 def get_species(search_term):
     session = dbconnect()
