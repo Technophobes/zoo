@@ -47,7 +47,7 @@ class Specimen(Base):
 
 # A bunch of stuff to make the connection to the database work.
 def dbconnect():
-    engine = create_engine('sqlite:///zoo.db', echo=True)
+    engine = create_engine('sqlite:///zoo.db', echo=False)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     return Session()
