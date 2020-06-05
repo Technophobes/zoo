@@ -2,12 +2,11 @@
 import requests
 import json
 
+# in the following comments, we have a few examples that we know work. We keep them for us: 
 # r =requests.get("http://127.0.0.1:5000/genus_and_species_and_specimen/6")
-
 # # print(r.text)
 # # print(r.json())
 # #print(type(r.json()))
-
 # pload = {"scientific_name":"alien4"}
 # g = requests.post("http://127.0.0.1:5000/add_genus" , json = pload)
 

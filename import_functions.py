@@ -30,7 +30,6 @@ def addSpecimen(session, specimen_input):
 
 def addSpecies(session, species_input):
     genus = Genus()
-#    session = dbconnect()
     try: 
         genus = session.query(Genus).filter(Genus.scientific_name == species_input["genus"]["scientific_name"]).one()
     except:
