@@ -18,7 +18,7 @@ def add_genus():
         genus_instance.scientific_name = request_dict["scientific_name"]
         session.add(genus_instance)
         session.commit()
-        return "ok"
+        return jsonify(genus_instance.id)
     except exc.IntegrityError:
         session.rollback()
         return "already exists", 400
@@ -40,7 +40,7 @@ def add_species():
         species.genus_id = genus_instance.id
         session.add(species)
         session.commit()
-        return "ok"
+        return jsonify(species.id)
     except exc.IntegrityError:
         session.rollback()
         return "already exists", 400
@@ -63,7 +63,7 @@ def add_specimen():
         specimen.species_id = species.id    
         session.add(specimen)
         session.commit()
-        return "ok"
+        return jsonify(specimen.id)
     except exc.IntegrityError:
         session.rollback()
         return "already exists", 400
