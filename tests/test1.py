@@ -1,9 +1,13 @@
+# Test that there is indeed an error when a duplicate is added (identical genus, species and specimen name)
+# Duplicate should not be added to the database
+# Expected output: In Terminal "already exists" (referring to the 2nd dictionary in test_list) and 1 entry for "irbis" added to DB
+
 import requests
 import json
 
 test_list = [
-    {"name": "tubby", "dob": "1262304000", "species_common": "snow leopard", "species_scientific": "panthera uncia", "genus_scientific": "panthera"}, 
-    {"name": "batman", "dob": "1262304001", "species_common": "snow leopard", "species_scientific": "panthera uncia", "genus_scientific": "panthera"} 
+    {"name": "irbis", "dob": "1362304000", "species_common": "snow leopard", "species_scientific": "panthera uncia", "genus_scientific": "panthera"}, 
+    {"name": "irbis", "dob": "1362304000", "species_common": "snow leopard", "species_scientific": "panthera uncia", "genus_scientific": "panthera"} 
 ]
 
 for input_dict in test_list:    
