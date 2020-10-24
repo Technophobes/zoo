@@ -1,0 +1,46 @@
+h1 {
+  color: rgb(9, 99, 9);
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 3em;
+}
+
+h2 {
+  color: deepskyblue
+  font-family: helvetica, sans-serif;
+}
+
+body {
+  color: rgb(32, 47, 157);
+  font-family: helvetica, sans-serif;
+  text-align: justify;
+ }
+
+.topnav {
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  /*background-color: darkblue; */
+  display: flex;
+  flex-basis:  | auto;
+  justify-content: space-evenly
+}
+
+a:link {
+  color: deepskyblue;
+}
+
+a:visited {
+  color: deepskyblue;
+}
+
+a:hover {
+  color: green;
+}
+
+a:active {
+  color: green;
+}
+
+
+
