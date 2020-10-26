@@ -1,0 +1,157 @@
+h1 {
+  color: rgb(9, 99, 9);
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 3em;
+  position: relative;
+  z-index: -1;
+}
+
+h2 {
+  color: deepskyblue
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  position: relative;
+  z-index: -1;
+}
+
+h3 {
+  color: rgb(9, 99, 9);
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.25em;
+  position: relative;
+  z-index: -1;
+}
+
+nav {
+  background-color: rgb(0,191,255,1) !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: helvetica, sans-serif;
+  font-size: 1.5em;
+  overflow: hidden;
+}
+
+body {
+  margin-top: 2em;
+  color: deepskyblue;
+  font-family: helvetica, sans-serif;
+  text-align: justify;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  position: relative;
+  z-index: -1;
+}
+
+p {
+  position: relative;
+  z-index: -1;
+}
+
+ul {
+  list-style-type: none;
+  position: relative;
+  z-index: -1;
+}
+
+nav a {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  text-decoration: none;
+  padding: 0 0 0 1.5em;
+}
+
+a {
+  display: block;
+  text-align: center;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:visited {
+  color: white;
+}
+
+a:link {
+  color: deepskyblue;
+}
+
+a:visited {
+  color: deepskyblue;
+}
+
+a:hover {
+  color: green;
+}
+
+a:active {
+  color: green;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+}
+
+
+.vh-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em
+}
+
+.destinations {
+  color: slateblue;
+  text-align: center;
+}
+
+.mountain {
+  padding: 0.2em;
+}
+
+.image-txt-container {
+  display: flex;
+  flex-direction: row;
+  margin-inline-start: auto;
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 90vh
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem
+}
+
+#outside-intro {
+  color: slateblue;
+  font-family: helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+  z-index: -1;
+}
+
+#lake {
+  width: 50%;
+}
+
+
+
+
